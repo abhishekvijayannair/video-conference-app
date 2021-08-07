@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--Website Created By:Abhishek Vijayan Nair, Amal Thomas, Jith Koshy | 06/08/2021-->
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>CAN CHAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/journal/bootstrap.min.css">
+
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .spacer-10 {
+            height: 20px;
+        }
+
+        .spacer-15 {
+            height: 15px;
+        }
+
+        .spacer-20 {
+            height: 20px;
+        }
+
+        .spacer-25 {
+            height: 25px;
+        }
+
+        .spacer-30 {
+            height: 30px;
+        }
+
+        .spacer-35 {
+            height: 35px;
+        }
+
+        .spacer-40 {
+            height: 40px;
+        }
+
+        .spacer-45 {
+            height: 45px;
+        }
+
+        .spacer-50 {
+            height: 50px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08) !important;
+        }
+
+        .header-home {
+            padding: 100px 0px;
+            background-size: cover;
+            background-position: center;
+            background-image:
+                url('https://www.expatica.com/app/uploads/sites/8/2017/05/banking-in-portugal-1920x1080.jpg');
+            color: #0074a7;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .nav-item a {
+            color: #eb6864 !important;
+        }
+
+        .gutter {
+            border-radius: 5px;
+            padding: 24px;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .navbar a.nav-link {
+            color: #0071a3;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .d-title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .section {
+            background-image:
+                url('https://images.unsplash.com/photo-1517817748493-49ec54a32465');
+            background-size: cover;
+            height: 90vh;
+        }
+
+        .navbar-brand {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        #register-msg-error {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md shadow" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'images/app-icon.jpg' %}" alt="Logo" style="max-width:30px;"> Can Chat</a>
+        </div>
+    </nav>
+
+    <section class="section">
+
+        <div class="page-content registration-page">
+            <div class="container">
+                <div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+
+                            <div class="card bg-secondary shadow border-0 mt-1 mb-1">
+                                <div class="card-header bg-white pt-4">
+                                    <form action="/updateProfile" method="post" autocomplete="off">
+                                        {% csrf_token %}
+                                        <div class="text-center">
+
+                                            <h5>Update Your Information</h5>
+                                            <hr>
+                                            <div class="spacer-20"></div>
+                                        </div>
+                                        <div class="alert alert-danger text-center mb-3" id="register-msg-error">
+
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            {{ u_form|crispy }}
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary" name="submit"
+                                                value="/updateProfile">Update Profile</button>
+                                            <br><br>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div class="auth-background-overlay"></div>
+        </div>
+
+    </section>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer text-center">
+        <p>&copy; Copyright 2021. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

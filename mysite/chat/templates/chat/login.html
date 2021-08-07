@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--Website Created By:Abhishek Vijayan Nair, Amal Thomas, Jith Koshy | 06/08/2021-->
+{% load static %}
+
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>CAN CHAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/journal/bootstrap.min.css">
+
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .spacer-10 {
+            height: 20px;
+        }
+
+        .spacer-15 {
+            height: 15px;
+        }
+
+        .spacer-20 {
+            height: 20px;
+        }
+
+        .spacer-25 {
+            height: 25px;
+        }
+
+        .spacer-30 {
+            height: 30px;
+        }
+
+        .spacer-35 {
+            height: 35px;
+        }
+
+        .spacer-40 {
+            height: 40px;
+        }
+
+        .spacer-45 {
+            height: 45px;
+        }
+
+        .spacer-50 {
+            height: 50px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08) !important;
+        }
+
+        .header-home {
+            padding: 100px 0px;
+            background-size: cover;
+            background-position: center;
+            background-image:
+                url('https://www.expatica.com/app/uploads/sites/8/2017/05/banking-in-portugal-1920x1080.jpg');
+            color: #0074a7;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .nav-item a {
+            color: #eb6864 !important;
+        }
+
+        .gutter {
+            border-radius: 5px;
+            padding: 24px;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .navbar a.nav-link {
+            color: #0071a3;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .d-title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .section {
+            background-image:
+                url('https://images.unsplash.com/photo-1507878866276-a947ef722fee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29uZmVyZW5jZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=60');
+            background-size: cover;
+            height: 90vh;
+        }
+
+        .navbar-brand {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        #login-msg-error {
+            display: none;
+        }
+
+        #login-msg-success {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md shadow" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'images/app-icon.jpg' %}" alt="Logo" style="max-width:30px;"> Can Chat</a>
+        </div>
+    </nav>
+    <section class="section">
+
+        <div class="page-content registration-page">
+            <div class="container">
+                <div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4">
+
+                            <div class="card bg-secondary shadow border-0 mt-2 mb-2">
+                                <div class="card-header bg-white pt-4">
+
+                                    <form action="" method="post" autocomplete="off">
+                                        <div class="text-center">
+
+                                            <h5>Sign In</h5>
+                                            <hr>
+                                            <div class="spacer-20"></div>
+                                        </div>
+                                        <div class="alert alert-danger text-center mb-3" id="login-msg-error">
+                                        </div>
+                                        <div class="alert alert-success text-center mb-3" id="login-msg-success">
+                                        </div>  
+                                        {% csrf_token %}
+                                        <!-- {{ form }} -->
+
+                                        <div class="form-group">
+                                            <label for="{{form.username.id_for_label}}">Username</label>
+                                            <input type="text" name="{{form.username.name}}" class="form-control" required>
+                                            <span>{{ form.username.errors }}</span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="{{form.password.id_for_label}}">Password</label>
+                                            <input type="password" name="{{form.password.name}}" class="form-control" required>
+                                            <span>{{ form.password.errors }}</span>
+                                        </div>
+
+                                        <span>{{ form.non_field_errors }}</span>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary" name="submit">Sign In</button>
+                                            <br><br>
+                                            <div class="auth-meta">
+                                                <a class="auth-metas" href="/register">Create
+                                                    an account</a>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div class="auth-background-overlay"></div>
+        </div>
+
+    </section>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer text-center">
+        <p>&copy; Copyright 2021. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

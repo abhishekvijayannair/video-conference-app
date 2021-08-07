@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--Website Created By:Abhishek Vijayan Nair, Amal Thomas, Jith Koshy | 06/08/2021-->
+{% load static %}
+
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>CAN CHAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/journal/bootstrap.min.css">
+
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .spacer-10 {
+            height: 20px;
+        }
+
+        .spacer-15 {
+            height: 15px;
+        }
+
+        .spacer-20 {
+            height: 20px;
+        }
+
+        .spacer-25 {
+            height: 25px;
+        }
+
+        .spacer-30 {
+            height: 30px;
+        }
+
+        .spacer-35 {
+            height: 35px;
+        }
+
+        .spacer-40 {
+            height: 40px;
+        }
+
+        .spacer-45 {
+            height: 45px;
+        }
+
+        .spacer-50 {
+            height: 50px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08) !important;
+        }
+
+        .header-home {
+            padding: 100px 0px;
+            background-size: cover;
+            background-position: center;
+            background-image:
+                url('https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHdoaXRlJTIwYWJzdHJhY3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=60');
+            color: #0074a7;
+            height: 90%;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .nav-item a {
+            color: #eb6864 !important;
+        }
+
+        .gutter {
+            border-radius: 5px;
+            padding: 24px;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .navbar a.nav-link {
+            color: #0071a3;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .d-title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .section {
+            background-image:
+                url('https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHdoaXRlJTIwYWJzdHJhY3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=60');
+            background-size: cover;
+            height: 90vh;
+        }
+
+        .navbar-brand {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md shadow" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'images/app-icon.jpg' %}" alt="Logo" style="max-width:30px;"> Can Chat</a>
+        </div>
+    </nav>
+
+    <div class="header-home shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <a></a>
+                            <h1 style="color: #eb6864; text-shadow: 2px 2px 2px #CDCDCD;">Can Chat</h1>
+                            <p class="p-3 mb-2 bg-gradient-dark" style="color:#0074a7;" text-align: justify;
+                                text-justify: inter-word;><span>
+                                    Can Chat is a messenger platform where a group of people can join and chat with each
+                                    other. There is an additional option to see them through their webcam. We build this
+                                    multi-client web app using Python, JavaScript, Django, WebSocket and WebRTC.
+                                </span></p>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="spacer-30"></div>
+                            <a href="/register" class="btn btn-primary btn-lg full-width">Create Account</a>
+                            <div class="spacer-10"></div>
+                            <a href="/login" class="btn btn-primary btn-lg full-width">Let's Begin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer text-center">
+        <p>&copy; Copyright 2021. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
