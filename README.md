@@ -1,2 +1,2 @@
-# video-conference-app
+# VIDEO CONFERENCE APP ON DJANGO FRAMEWORK
  
